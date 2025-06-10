@@ -1,0 +1,176 @@
+            *{
+                box-sizing: border-box;
+            }
+
+
+
+            html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, 
+            ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+            }
+
+            html {
+            scroll-behavior: smooth;  
+            }
+
+            body{
+                background-color: rgb(255, 255, 255);
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            
+
+            #header{
+                background-color: rgb(153, 201, 239);
+                border: 5px solid black; ;
+                height: 70px;
+                font-size: 18px;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+            #header p{
+                font-size: 200%;
+                padding-top: 5px;
+                padding-bottom: 10px;
+                margin-bottom: 5px;
+                text-align: center;
+                color: black;
+            }
+        
+            .nav{
+                position: absolute;
+                top: 60px;
+                right: 50px;
+
+
+
+            }
+            ul.nav a{
+                display: inline-block;
+                width: 100px;
+                padding: 10px;
+                margin-bottom: 10px;
+                margin-top: 30px;
+                background-color: rgb(153, 201, 239);
+                border: 5px solid black;
+                text-decoration: none;
+                text-align: center;
+                color: black;
+                
+            }
+           
+    
+            .nav li{
+                display: inline-block;
+                font-size: 98%;
+                color: black;
+            }
+            .li_1:hover{
+                color: aliceblue;
+            }
+            .li_2:hover{
+                color: aliceblue;
+            }
+            
+           .main_text{
+                background-color:rgb(153, 201, 239);
+                border: 5px solid black;
+                resize: none;
+                height: 600px;
+                width: 1421px;
+                margin-left: 50px;
+                padding: 225px;
+                margin: 95px 50px 50px 50px;
+                
+                font-size: 200%;
+                font-family: monospace;
+                color: black;
+           }
+            textarea::placeholder{
+                color: black;
+            }
+
+           .but{
+                background-color: rgb(153, 201, 239);
+                border: 5px solid black;
+                font-size: 150%;
+                margin-left: 1350px;
+                margin-bottom: 30px;
+                margin-top: -30px;
+                padding: 10px 30px;
+            }
+            .but:hover{
+                color: aliceblue;
+            }
+
+            .but2:hover{
+                color: aliceblue;
+            }
+            .but2{
+                background-color: rgb(153, 201, 239);
+                border: 5px solid black;
+                font-size: 150%;
+                padding: 10px 30px;
+                margin-bottom: 30px;
+                margin-right: 200px;
+                position: absolute;
+                bottom: -60px;
+                right: -10px;
+                
+            }
+
+            .sidebar{
+                float: right;
+                background-color: rgb(153, 201, 239);
+                border: 5px solid black;
+                font-size: 200%;
+                margin-right: 50px;
+                height: 500px;
+                width: 400px;
+                color: black;
+                text-align: center;
+
+            }  
+
+            .graph{
+                background-color:rgb(153, 201, 239);
+                border: 5px solid black;
+                font-size: 200%;
+                margin-left: 50px;
+                width: 1000px;
+                height: 500px;
+                color: black;
+                text-align: center;
+            }
+            #footer{
+                border: 5px solid black;
+                background-color:  rgb(153, 201, 239);
+                color: black;
+                text-align: center;
+                margin-top: 50px;
+                margin-left: 50px;
+                margin-right: 50px;
+                font-size: 150%;
+            }
+
+            table{
+                text-align: center;
+                margin: 5px;
+            }
+            
+            .link_1{
+                color:black;
+            }
+            .link_2{
+                color: black;
+            }
+
+            
+
+        
+        
+        
+        
