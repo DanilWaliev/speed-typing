@@ -41,24 +41,20 @@
             }
         
             .nav{
-                position: absolute;
-                top: 60px;
-                right: 50px;
-
-
-
+                margin-left: 50px; 
             }
             ul.nav a{
                 display: inline-block;
-                width: 100px;
+                width: 150px;
                 padding: 10px;
-                margin-bottom: 10px;
+                margin-bottom: 0px;
                 margin-top: 30px;
                 background-color: rgb(153, 201, 239);
                 border: 5px solid black;
                 text-decoration: none;
                 text-align: center;
                 color: black;
+                font-size: 150%;
                 
             }
            
@@ -83,7 +79,7 @@
                 width: 1421px;
                 margin-left: 50px;
                 padding: 225px;
-                margin: 95px 50px 50px 50px;
+                margin: 40px 50px 0px 50px;
                 
                 font-size: 200%;
                 font-family: monospace;
@@ -93,15 +89,25 @@
                 color: black;
             }
 
-           .but{
+            .buttons{
+                margin-left: 1088px;
+                margin-top: 20px;
+                margin-bottom: 25px;
+            }
+            .but{
                 background-color: rgb(153, 201, 239);
                 border: 5px solid black;
-                font-size: 150%;
-                margin-left: 1350px;
-                margin-bottom: 30px;
-                margin-top: -30px;
                 padding: 10px 30px;
+                font-size: 150%;
             }
+            .but2{
+                background-color: rgb(153, 201, 239);
+                border: 5px solid black;
+                padding: 10px 30px;
+                font-size: 150%;
+            }
+            
+
             .but:hover{
                 color: aliceblue;
             }
@@ -109,18 +115,8 @@
             .but2:hover{
                 color: aliceblue;
             }
-            .but2{
-                background-color: rgb(153, 201, 239);
-                border: 5px solid black;
-                font-size: 150%;
-                padding: 10px 30px;
-                margin-bottom: 30px;
-                margin-right: 200px;
-                position: absolute;
-                bottom: -60px;
-                right: -10px;
-                
-            }
+           
+           
 
             .sidebar{
                 float: right;
