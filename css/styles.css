@@ -30,6 +30,7 @@
                 font-size: 18px;
                 margin-left: 50px;
                 margin-right: 50px;
+            
             }
             #header p{
                 font-size: 200%;
@@ -43,6 +44,7 @@
             .nav{
                 margin-left: 50px; 
             }
+            
             ul.nav a{
                 display: inline-block;
                 width: 150px;
@@ -55,6 +57,7 @@
                 text-align: center;
                 color: black;
                 font-size: 150%;
+                font-family: monospace;
                 
             }
            
@@ -69,6 +72,9 @@
             }
             .li_2:hover{
                 color: aliceblue;
+            }
+            .li_2{
+                margin-left: 10px;
             }
             
            .main_text{
@@ -90,7 +96,7 @@
             }
 
             .buttons{
-                margin-left: 1088px;
+                margin-left: 1070px;
                 margin-top: 20px;
                 margin-bottom: 25px;
             }
@@ -105,6 +111,7 @@
                 border: 5px solid black;
                 padding: 10px 30px;
                 font-size: 150%;
+                margin-left: 15px;
             }
             
 
