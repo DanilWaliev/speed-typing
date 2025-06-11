@@ -1,26 +1,39 @@
+/*
+Скрипт отвечает за запуск, обработку и окончание ввода пользователем текста
+
+1. В блок с id="mainDiv" помещаются спаны (span), содержащие одну букву.
+(т.е. каждая буква - это отдельный спан). 
+2. Запускается обработка нажатия клавиши пользователем.
+3. Когда пользователь введёт последний символ, обработка нажатий выключается.
+*/
+
+// Получаем div, в котором отображаются буквы
 let mainDiv = document.getElementById("mainDiv");
-let text = 'just go on and faith will soon return';
+// Счетчик введённых пользователем символов
 let counter = 0;
-for (char of text) {
-    mainDiv.appendChild(getColorCharSpan(char));
+// Указатель на последний введённый пользователем спан
+let textNode;
+
+// Обработка нажатия кнопки Start
+function startInput(e) {
+    let text = 'just go on and faith will soon return';
+    for (char of text) {
+        mainDiv.appendChild(getColorCharSpan(char));
+    }
+
+    // Получаем первый символ в div'е (первый элемент в div'е почему то "text", поэтому получаем следующий после первого)
+    textNode = document.getElementById('mainDiv').firstChild.nextSibling;
+
+    window.addEventListener("keydown", handleKeydown);
 }
 
-let textNode = document.getElementById('mainDiv').firstChild;
-
-window.addEventListener("keydown", handleKeydown);
-let startTime;
-let endTime;
-
-// functions:
-function startInput() {
-  
-}
-
+// Проверка клавиши (true - буквы, пробел или BackSpace; false - остальные символы)
 function isValidKey(key) {
     let charCode = key.charCodeAt(0);
     return (charCode === 32 || charCode === 66 || (charCode >= 97 && charCode <= 122));
 }
 
+// "Конструктор" спана
 function getColorCharSpan(char) {
     const span = document.createElement('span');
     span.textContent = char;
@@ -28,6 +41,8 @@ function getColorCharSpan(char) {
     return span;
 }
 
+// Задает переданному спану закругленные края
+// isForward - направление ввода пользователя (если вводит символ - true, если стирает - false)
 function setRoundEdges(span, isForward) {
     span.classList.remove('singleSpan');
     span.classList.remove('firstSpan');
@@ -64,9 +79,10 @@ function setRoundEdges(span, isForward) {
     }
 }
 
+// Обработка нажатия клавиши
 function handleKeydown(e) {
     if (!isValidKey(e.key)) return;
-
+    console.log(e.key.char);
     if (counter === 0) startTime = new Date().getTime();
 
     if (e.key === 'Backspace') {
@@ -93,19 +109,18 @@ function handleKeydown(e) {
     }
     else {
         counter++;
-
-        //textNode.classList.remove('unwrittenSpan');
+        textNode.classList.remove('unwrittenSpan');
         textNode.classList.add('writtenWrongSpan');
+        
         setRoundEdges(textNode, true);
 
         textNode = textNode.nextElementSibling;
 
         if (textNode === null) endInput();
     }
-
-    console.log(counter);
 }
 
+// Завершение ввода
 function endInput() {
     window.removeEventListener('keydown', handleKeydown);
     endTime = new Date().getTime();
