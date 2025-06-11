@@ -167,29 +167,37 @@
                 color: black;
             }
 
+            /* Классы для подсветки символов в поле ввода текста */
+            /* Символ ещё не введён */
             .unwrittenSpan {
                 color: #000000;
                 background-color: rgb(153, 201, 239);;
             }
 
+            /* Символ введён правильно*/
             .writtenCorrectSpan {
                 color: #66BB6A;
                 background-color: lightgrey;
             }
 
+            /* Символ введён неправильно*/
             .writtenWrongSpan {
                 color: #FF5252;
                 background-color: lightgrey;
             }
 
+            /* Классы для закругления подсветки введённых символов */
+            /* Одиночная подсветка */
             .singleSpan {
                 border-radius: 5px;
             }
 
+            /* Начало закругления подсветки */
             .firstSpan {
                 border-radius: 5px 1px 1px 5px;
             }
 
+            /* Конец закругления подсветки */
             .lastSpan {
                 border-radius: 1px 5px 5px 1px;
             }
