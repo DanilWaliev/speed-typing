@@ -169,7 +169,7 @@
 
             .unwrittenSpan {
                 color: #000000;
-                background-color: #ffffff;
+                background-color: rgb(153, 201, 239);;
             }
 
             .writtenCorrectSpan {

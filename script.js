@@ -18,7 +18,6 @@ function startInput() {
 
 function isValidKey(key) {
     let charCode = key.charCodeAt(0);
-    console.log(charCode);
     return (charCode === 32 || charCode === 66 || (charCode >= 97 && charCode <= 122));
 }
 
