@@ -3,10 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>SpeedTyping</title>
-        <link rel="stylesheet" type="text/css" href="css\styles.css"/>
        
     <body>
-        <script src="js/script.js"></script>
         <div id="header">
             <p class="info">SpeedTyping</p>
         </div>
@@ -16,13 +14,12 @@
         </ul>
 
         <div id="wrapper">
-            <div class="main">
-                <form class="form">
-                    <textarea class="main_text" placeholder="here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable"></textarea>
-                </form>
+            <div class="main" id="mainDiv">
             </div>
+            <link rel="stylesheet" type="text/css" href="css\styles.css"/>
+            <script src="script.js"></script>
             <div class="buttons">
-                <button class="but" type="submit" >Start</button>
+                <button class="but" type="submit" onclick="startInput()">Start</button>
                 <button class="but2" type="submit">Change language</button>
             </div>
 
