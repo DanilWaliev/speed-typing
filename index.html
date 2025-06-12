@@ -19,7 +19,7 @@
             <link rel="stylesheet" type="text/css" href="css\styles.css"/>
             <script src="script.js"></script>
             <div class="buttons">
-                <button class="but" type="submit" onclick="startInput()">Start</button>
+                <button class="but" type="submit" onclick="startInput(); this.blur()" onblur="blurDetector()" onfocus="focusDetector()">Start</button>
                 <button class="but2" type="submit">Change language</button>
             </div>
 

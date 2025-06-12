@@ -27,6 +27,16 @@ function startInput(e) {
     window.addEventListener("keydown", handleKeydown);
 }
 
+function blurDetector()
+{
+    console.log("button was blured");
+}
+
+function focusDetector()
+{
+    console.log("button was focused");
+}
+
 // Проверка клавиши (true - буквы, пробел или BackSpace; false - остальные символы)
 function isValidKey(key) {
     let charCode = key.charCodeAt(0);
