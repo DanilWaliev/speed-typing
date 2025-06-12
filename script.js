@@ -95,6 +95,10 @@ function handleKeydown(e) {
     console.log(e.key.char);
     if (counter === 0) startTime = new Date().getTime();
 
+    if (e.keyCode === 32 && e.target === document.body) {  
+        e.preventDefault();  
+    }  
+
     if (e.key === 'Backspace') {
         counter--;
 
