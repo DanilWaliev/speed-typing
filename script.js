@@ -8,7 +8,9 @@
 */
 
 // Получаем div, в котором отображаются буквы
-let mainDiv = document.getElementById("mainDiv");
+let mainDiv = document.getElementById("inputDiv");
+
+let resultDiv = document.getElementById("resultDiv");
 // Счетчик введённых пользователем символов
 let counter = 0;
 // Указатель на последний введённый пользователем спан
@@ -25,16 +27,6 @@ function startInput(e) {
     textNode = document.getElementById('mainDiv').firstChild.nextSibling;
 
     window.addEventListener("keydown", handleKeydown);
-}
-
-function blurDetector()
-{
-    console.log("button was blured");
-}
-
-function focusDetector()
-{
-    console.log("button was focused");
 }
 
 // Проверка клавиши (true - буквы, пробел или BackSpace; false - остальные символы)
@@ -92,9 +84,10 @@ function setRoundEdges(span, isForward) {
 // Обработка нажатия клавиши
 function handleKeydown(e) {
     if (!isValidKey(e.key)) return;
-    console.log(e.key.char);
+
     if (counter === 0) startTime = new Date().getTime();
 
+    // Глушим стандартное действие на пробел
     if (e.keyCode === 32 && e.target === document.body) {  
         e.preventDefault();  
     }  
@@ -140,6 +133,4 @@ function endInput() {
     endTime = new Date().getTime();
     alert(`Результат: ${(text.length / (endTime - startTime) * 1000).toFixed(1)} символов в секунду`);
 }
-
-
 
