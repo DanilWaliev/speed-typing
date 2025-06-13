@@ -15,16 +15,18 @@ let resultDiv = document.getElementById("resultDiv");
 let counter = 0;
 // Указатель на последний введённый пользователем спан
 let textNode;
+// Текст для печати
+let text;
 
 // Обработка нажатия кнопки Start
 function startInput(e) {
-    let text = 'just go on and faith will soon return';
+    text = 'just go on and faith will soon return';
     for (char of text) {
         mainDiv.appendChild(getColorCharSpan(char));
     }
 
     // Получаем первый символ в div'е (первый элемент в div'е почему то "text", поэтому получаем следующий после первого)
-    textNode = document.getElementById('mainDiv').firstChild.nextSibling;
+    textNode = mainDiv.firstChild;
 
     window.addEventListener("keydown", handleKeydown);
 }
@@ -129,8 +131,18 @@ function handleKeydown(e) {
 
 // Завершение ввода
 function endInput() {
-    window.removeEventListener('keydown', handleKeydown);
     endTime = new Date().getTime();
-    alert(`Результат: ${(text.length / (endTime - startTime) * 1000).toFixed(1)} символов в секунду`);
+    window.removeEventListener('keydown', handleKeydown);
+    printResult();
+}
+
+// Вывод результата в 
+function printResult() {
+    // приведение к символам/час
+    result = (text.length / (endTime - startTime) * 1000).toFixed(1);
+    let resultSpan = document.createElement('span');
+    resultSpan.textContent = `${result} letters per sec`;
+
+    resultDiv.appendChild(resultSpan);
 }
 
