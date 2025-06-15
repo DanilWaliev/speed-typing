@@ -159,7 +159,7 @@ function endInput() {
 function printResult() {
     // приведение к символам/час
     result = (text.length / (endTime - startTime) * 1000).toFixed(1);
-    let resultSpan = document.createElement('span');
+    let resultSpan = document.createElement('p');
     resultSpan.textContent = `${result} letters per sec`;
 
     resultDiv.appendChild(resultSpan);
