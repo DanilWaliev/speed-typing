@@ -12,7 +12,7 @@ let mainDiv = document.getElementById("inputDiv");
 
 let resultDiv = document.getElementById("resultDiv");
 // Счетчик введённых пользователем символов
-let counter = 0;
+let counter;
 // Указатель на последний введённый пользователем спан
 let textNode;
 // Текст для печати
@@ -28,7 +28,26 @@ function startInput(e) {
     // Получаем первый символ в div'е (первый элемент в div'е почему то "text", поэтому получаем следующий после первого)
     textNode = mainDiv.firstChild;
 
+    counter = 0;
+
     window.addEventListener("keydown", handleKeydown);
+
+    startToRestart(e);
+}
+
+// Меняет текст кнопки старт на рестарт и меняет обработчик событий
+function startToRestart(e)
+{
+    e.textContent = "Restart";
+    e.removeEventListener("click", startInput);
+    e.addEventListener("click", restartInput);
+}
+
+// Рестарт ввода символов
+function restartInput()
+{
+    cleanMainDiv();
+    startInput();
 }
 
 // Проверка клавиши (true - буквы, пробел или BackSpace; false - остальные символы)
@@ -146,3 +165,9 @@ function printResult() {
     resultDiv.appendChild(resultSpan);
 }
 
+// Очищения окна вывода от символов
+function cleanMainDiv() {
+    while (mainDiv.firstChild) {
+        mainDiv.removeChild(mainDiv.firstChild)
+    }
+}
