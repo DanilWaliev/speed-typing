@@ -8,33 +8,46 @@
 */
 
 // Получаем div, в котором отображаются буквы
-let mainDiv = document.getElementById("mainDiv");
+let mainDiv = document.getElementById("inputDiv");
+
+let resultDiv = document.getElementById("resultDiv");
 // Счетчик введённых пользователем символов
-let counter = 0;
+let counter;
 // Указатель на последний введённый пользователем спан
 let textNode;
+// Текст для печати
+let text;
 
 // Обработка нажатия кнопки Start
 function startInput(e) {
-    let text = 'just go on and faith will soon return';
+    text = 'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout';
     for (char of text) {
         mainDiv.appendChild(getColorCharSpan(char));
     }
 
     // Получаем первый символ в div'е (первый элемент в div'е почему то "text", поэтому получаем следующий после первого)
-    textNode = document.getElementById('mainDiv').firstChild.nextSibling;
+    textNode = mainDiv.firstChild;
+
+    counter = 0;
 
     window.addEventListener("keydown", handleKeydown);
+
+    startToRestart(e);
 }
 
-function blurDetector()
+// Меняет текст кнопки старт на рестарт и меняет обработчик событий
+function startToRestart(e)
 {
-    console.log("button was blured");
+    e.textContent = "Restart";
+    e.removeEventListener("click", startInput);
+    e.addEventListener("click", restartInput);
 }
 
-function focusDetector()
+// Рестарт ввода символов
+function restartInput()
 {
-    console.log("button was focused");
+    cleanMainDiv();
+    startInput();
 }
 
 // Проверка клавиши (true - буквы, пробел или BackSpace; false - остальные символы)
@@ -92,8 +105,13 @@ function setRoundEdges(span, isForward) {
 // Обработка нажатия клавиши
 function handleKeydown(e) {
     if (!isValidKey(e.key)) return;
-    console.log(e.key.char);
+
     if (counter === 0) startTime = new Date().getTime();
+
+    // Глушим стандартное действие на пробел
+    if (e.keyCode === 32 && e.target === document.body) {  
+        e.preventDefault();  
+    }  
 
     if (e.key === 'Backspace') {
         counter--;
@@ -132,10 +150,24 @@ function handleKeydown(e) {
 
 // Завершение ввода
 function endInput() {
-    window.removeEventListener('keydown', handleKeydown);
     endTime = new Date().getTime();
-    alert(`Результат: ${(text.length / (endTime - startTime) * 1000).toFixed(1)} символов в секунду`);
+    window.removeEventListener('keydown', handleKeydown);
+    printResult();
 }
 
+// Вывод результата в 
+function printResult() {
+    // приведение к символам/час
+    result = (text.length / (endTime - startTime) * 1000).toFixed(1);
+    let resultSpan = document.createElement('p');
+    resultSpan.textContent = `${result} letters per sec`;
 
+    resultDiv.appendChild(resultSpan);
+}
 
+// Очищения окна вывода от символов
+function cleanMainDiv() {
+    while (mainDiv.firstChild) {
+        mainDiv.removeChild(mainDiv.firstChild)
+    }
+}

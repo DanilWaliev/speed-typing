@@ -14,20 +14,17 @@
         </ul>
 
         <div id="wrapper">
-            <div class="main" id="mainDiv">
-            </div>
+            <div class="main" id="inputDiv"></div>
             <link rel="stylesheet" type="text/css" href="css\styles.css"/>
-            <script src="script.js"></script>
             <div class="buttons">
-                <button class="but" type="submit" onclick="startInput(); this.blur()" onblur="blurDetector()" onfocus="focusDetector()">Start</button>
+                <button class="but" type="submit" id="startRestartButton" onclick="startInput(this); this.blur()">Start</button>
                 <button class="but2" type="submit">Change language</button>
             </div>
 
-            <div class="sidebar">
-                <p>Your results</p>
-            </div>
+            <div class="sidebar" id="resultDiv"></div>
             
             <div class="graph">some graph</div>
+            <script src="script.js"></script>
         </div>
 
         <div id="footer">
