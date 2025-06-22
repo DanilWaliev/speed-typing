@@ -20,7 +20,7 @@ let text;
 
 // Обработка нажатия кнопки Start
 function startInput(e) {
-    text = 'it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout';
+    text = 'just go on and faith will soon return';
     for (char of text) {
         mainDiv.appendChild(getColorCharSpan(char));
     }

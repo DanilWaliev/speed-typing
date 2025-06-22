@@ -5,33 +5,34 @@
         <title>SpeedTyping</title>
        
     <body>
+        <!-- Вернхний колонтитул -->
         <div id="header">
-            <p class="info">SpeedTyping</p>
+            <p>SpeedTyping</p>
         </div>
+        <!-- Панели навигации -->
         <ul class="nav">
-            <li><a class="li_1" href="file_f.html">Account</a></li>
-            <li><a class="li_2" href="#">Top</a></li>
+            <li><a class="navPanel" href="file_f.html">Account</a></li>
+            <li><a class="navPanel" href="#">Top</a></li>
         </ul>
 
+        <!-- общая обертка main, sidebar, graph -->
         <div id="wrapper">
             <div class="main" id="inputDiv"></div>
             <link rel="stylesheet" type="text/css" href="css\styles.css"/>
             <div class="buttons">
-                <button class="but" type="submit" id="startRestartButton" onclick="startInput(this); this.blur()">Start</button>
-                <button class="but2" type="submit">Change language</button>
+                <button class="buttonStart" type="submit" id="startRestartButton" onclick="startInput(this); this.blur()">Start</button>
+                <button class="butttonChangeLang" type="submit">Change language</button>
             </div>
-
             <div class="sidebar" id="resultDiv"></div>
-            
             <div class="graph">some graph</div>
             <script src="script.js"></script>
         </div>
-
+        <!-- нижний колонтитул -->
         <div id="footer">
             <p>SpeedTyping</p>
             <p id="project">project of @бабл квас</p>
-            <p class="banana">banan_developer <a class="link_1" href="https://t.me/banana4562">TG</a></p>
-            <p class="valiev">DanilWaliev <a class="link_2" href="https://t.me/unbelievablekiwi">TG</a></p>
+            <p>banan_developer <a class="TG_link" href="https://t.me/banana4562">TG</a></p>
+            <p>DanilWaliev <a class="TG_link" href="https://t.me/unbelievablekiwi">TG</a></p>
         </div>
     </body>
 </html>
