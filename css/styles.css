@@ -63,13 +63,13 @@
                 font-size: 98%;
                 color: black;
             }
-            .li_1:hover{
+            .navPanel:hover{
                 color: aliceblue;
             }
-            .li_2:hover{
+            .navPanel:hover{
                 color: aliceblue;
             }
-            .li_2{
+            .navPanel{
                 margin-left: 10px;
             }
             
@@ -96,13 +96,13 @@
                 margin-top: 20px;
                 margin-bottom: 25px;
             }
-            .but{
+            .buttonStart{
                 background-color: rgb(153, 201, 239);
                 border: 5px solid black;
                 padding: 10px 30px;
                 font-size: 150%;
             }
-            .but2{
+            .butttonChangeLang{
                 background-color: rgb(153, 201, 239);
                 border: 5px solid black;
                 padding: 10px 30px;
@@ -111,11 +111,11 @@
             }
             
 
-            .but:hover{
+            .buttonStart:hover{
                 color: aliceblue;
             }
 
-            .but2:hover{
+            .butttonChangeLang:hover{
                 color: aliceblue;
             }
            
@@ -160,11 +160,8 @@
                 margin: 5px;
             }
             
-            .link_1{
+            .TG_link{
                 color:black;
-            }
-            .link_2{
-                color: black;
             }
 
             /* Классы для подсветки символов в поле ввода текста */
@@ -200,7 +197,6 @@
                 border-radius: 1px 5px 5px 1px;
             }
 
-        
-        
+            
         
         
