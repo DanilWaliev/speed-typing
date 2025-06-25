@@ -123,6 +123,10 @@ body {
     font-size: 1.2rem;
 }
 
+.TG_link{
+    color:#000000
+}
+
 /* Адаптация для мобильных */
 @media (max-width: 1024px) {
     .sidebar {
