@@ -1,174 +1,190 @@
-            *{
-                box-sizing: border-box;
-            }
+/* Базовые стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-            html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, 
-            ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
-                margin: 0;
-                padding: 0;
-                border: 0;
-                font-size: 100%;
-                vertical-align: baseline;
-            }
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: monospace;
+    background: #2e2e2e;
+}
 
-            html {
-            scroll-behavior: smooth;  
-            }
+/* Шапка */
+#header {
+    margin: 0 50px;
+    padding: 10px;
+    text-align: center;
+}
 
-            body{
-                background-color: rgb(255, 255, 255);
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            }
-            
+#header p {
+    font-size: 3rem;
+    color: lightgrey;
+}
 
-            #header{
-                background-color: rgb(153, 201, 239);
-                border: 5px solid black; ;
-                height: 70px;
-                font-size: 18px;
-                margin-left: 50px;
-                margin-right: 50px;
-            
-            }
-            #header p{
-                font-size: 200%;
-                padding-top: 5px;
-                padding-bottom: 10px;
-                margin-bottom: 5px;
-                text-align: center;
-                color: black;
-            }
-        
-            .nav{
-                margin-left: 50px; 
-            }
-            
-            ul.nav a{
-                display: inline-block;
-                width: 150px;
-                padding: 10px;
-                margin-bottom: 0px;
-                margin-top: 30px;
-                background-color: rgb(153, 201, 239);
-                border: 5px solid black;
-                text-decoration: none;
-                text-align: center;
-                color: black;
-                font-size: 150%;
-                
-            }
-           
-            .nav li{
-                display: inline-block;
-                font-size: 98%;
-                color: black;
-            }
-            .navPanel:hover{
-                color: aliceblue;
-            }
-            .navPanel:hover{
-                color: aliceblue;
-            }
-            .navPanel{
-                margin-left: 10px;
-            }
-            
-           .main{
-                background-color:rgb(153, 201, 239);
-                border: 5px solid black;
-                resize: none;
-                height: 600px;
-                width: 1421px;
-                margin-left: 50px;
-                padding: 225px;
-                margin: 40px 50px 0px 50px;
-                
-                font-size: 200%;
-                font-family: monospace;
-                color: black;
-           }
-            textarea::placeholder{
-                color: black;
-            }
+/* Навигация */
+.nav {
+    margin: 10px 50px;
+    list-style: none;
+}
 
-            .buttons{
-                margin-left: 1070px;
-                margin-top: 20px;
-                margin-bottom: 25px;
-            }
-            .buttonStart{
-                background-color: rgb(153, 201, 239);
-                border: 5px solid black;
-                padding: 10px 30px;
-                font-size: 150%;
-            }
-            .butttonChangeLang{
-                background-color: rgb(153, 201, 239);
-                border: 5px solid black;
-                padding: 10px 30px;
-                font-size: 150%;
-                margin-left: 15px;
-            }
-            
+.nav li {
+    display: inline-block;
+}
 
-            .buttonStart:hover{
-                color: aliceblue;
-            }
+.nav a {
+    box-shadow: 0px 3px 0 0 #1D7373;
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #009999;
+    border-radius: 10px;
+    border: 2px solid #1D7373;
+    text-decoration: none;
+    text-align: center;
+    color: lightgrey;
+    font-size: 1.5rem;
+}
 
-            .butttonChangeLang:hover{
-                color: aliceblue;
-            }
-           
-           
+.nav a:hover {
+    color: white;
+}
 
-            .sidebar{
-                float: right;
-                background-color: rgb(153, 201, 239);
-                border: 5px solid black;
-                font-size: 200%;
-                margin-right: 50px;
-                height: 500px;
-                width: 400px;
-                color: black;
-                text-align: center;
+.nav a:active {
+    box-shadow: none;
+    transform: translate(0, 3px);
+}
 
-            }  
+/* Основной контент */
+#wrapper {
+    margin: 20px 50px;
+}
 
-            .graph{
-                background-color:rgb(153, 201, 239);
-                border: 5px solid black;
-                font-size: 200%;
-                margin-left: 50px;
-                width: 1000px;
-                height: 500px;
-                color: black;
-                text-align: center;
-            }
-            #footer{
-                border: 5px solid black;
-                background-color:  rgb(153, 201, 239);
-                color: black;
-                text-align: center;
-                margin-top: 50px;
-                margin-left: 50px;
-                margin-right: 50px;
-                font-size: 150%;
-            }
+.main {
+    border: 2px solid black;
+    background-color: rgb(93, 93, 93);
+    border-radius: 10px;
+    width: 100%;
+    min-height: 500px; /* Увеличенная высота */
+    padding: 50px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
 
-            table{
-                text-align: center;
-                margin: 5px;
-            }
-            
-            .TG_link{
-                color:black;
-            }
+/* Кнопки */
+.buttons {    
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.buttonStart, .butttonChangeLang {
+    box-shadow: 0px 3px 0 0 #1D7373;
+    background-color: #009999;
+    border-radius: 10px;
+    border: 2px solid #1D7373;
+    text-decoration: none;
+    text-align: center;
+    color: lightgrey;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: monospace; /* Почему не ставится автоматически? */
+}
+
+.buttonStart:hover, .butttonChangeLang:hover {
+    color: white;
+}
+
+.buttonStart:active, .butttonChangeLang:active {
+    box-shadow: none;
+    transform: translate(0, 3px);
+}
+
+/* Нижняя секция (график + сайдбар) */
+.bottom-section {
+    display: flex;
+    gap: 20px;
+}
+
+.graph {
+    background-color: rgb(153, 201, 239);
+    border: 5px solid black;
+    flex: 1;
+    min-height: 400px;
+    padding: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.sidebar {
+    background-color: rgb(153, 201, 239);
+    border: 5px solid black;
+    width: 400px;
+    min-height: 400px;
+    padding: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Подвал */
+#footer {
+    background-color: rgb(153, 201, 239);
+    border: 5px solid black;
+    margin: 20px 50px 0;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    #header, .nav, #wrapper, #footer {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .bottom-section {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav a {
+        width: 120px;
+        font-size: 1rem;
+    }
+    
+    .main {
+        min-height: 350px;
+    }
+    
+    .graph, .sidebar {
+        min-height: 300px;
+    }
+}
 
             /* Классы для подсветки символов в поле ввода текста */
             /* Символ ещё не введён */
             .unwrittenSpan {
-                color: #000000;
-                background-color: rgb(153, 201, 239);;
+                color: lightgrey;
             }
 
             /* Символ введён правильно*/
@@ -189,12 +205,12 @@
 
             /* Начало закругления подсветки */
             .firstSpan {
-                border-radius: 5px 1px 1px 5px;
+                border-radius: 5px 0px 1px 5px;
             }
 
             /* Конец закругления подсветки */
             .lastSpan {
-                border-radius: 1px 5px 5px 1px;
+                border-radius: 1px 5px 5px 0px;
             }
 
             
