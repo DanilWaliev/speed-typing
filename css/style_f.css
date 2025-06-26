@@ -33,6 +33,7 @@ body {
     border: 2px solid black;
     margin: 100px 0;
     color: lightgray;
+    border-radius: 10px;
 }
 
 .info {
@@ -45,6 +46,7 @@ body {
     display: block;
     margin-bottom: 10px;
     font-size: 1rem;
+    border-radius: 10px;
 }
 
 .email, .password {
@@ -55,6 +57,7 @@ body {
     border: 2px solid black;
     font-size: 1rem;
     color: rgb(93, 93, 93);
+    border-radius: 10px;
 }
 
 .password {

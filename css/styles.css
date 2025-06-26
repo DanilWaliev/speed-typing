@@ -121,6 +121,7 @@ body {
     font-size: 2rem;
     text-align: center;
     color:  lightgrey;
+    border-radius: 10px;
 }
 
 .sidebar {
@@ -133,6 +134,7 @@ body {
     font-size: 2rem;
     text-align: center;
     color:  lightgrey;
+    border-radius: 10px;
 }
 
 
