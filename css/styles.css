@@ -189,12 +189,14 @@ body {
 
             /* Символ введён правильно*/
             .writtenCorrectSpan {
-                background-color: #66BB6A;
+                color: lightgrey;
+                background-color: #569359;
             }
 
             /* Символ введён неправильно*/
             .writtenWrongSpan {
-                background-color: #FF5252;
+                color: lightgrey;
+                background-color: #983131;
             }
 
             /* Классы для закругления подсветки введённых символов */
