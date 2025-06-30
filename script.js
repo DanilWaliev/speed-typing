@@ -16,22 +16,33 @@ let counter;
 // Указатель на последний введённый пользователем спан
 let textNode;
 // Текст для печати
+let textLow = 'The quick brown fox jumps over the lazy dog. Practice typing daily to improve your speed.';
+let textMedium = 'Typing speed is measured in words per minute (WPM). To achieve 60+ WPM, focus on accuracy first, then gradually increase your pace. Avoid looking at the keyboard!';
+let textHigh = 'Mastering touch typing requires consistent practice. Place your fingers on the home row (ASDF-JKL;) and use all ten fingers. The more you type without errors, the higher your WPM score will be. Remember: speed comes naturally after accuracy. Ready? Lets begin this timed test now! ';
 let text;
+const rangeSlider = document.getElementById('range');
 
 // Обработка нажатия кнопки Start
-function startInput(e) {
-    text = 'just go on and faith will soon return';
-    for (char of text) {
+function startInput(event) {
+    const rangePosition = rangeSlider.value
+    if (rangePosition == 1)
+        text = textLow;
+    else if (rangePosition == 2)
+        text = textMedium;
+    else if (rangePosition == 3)
+        text = textHigh;
+
+    mainDiv.innerHTML = '';
+
+    for (const char of text) {
         mainDiv.appendChild(getColorCharSpan(char));
     }
 
-    // Получаем первый символ в div'е (первый элемент в div'е почему то "text", поэтому получаем следующий после первого)
+    // Получаем первый символ
     textNode = mainDiv.firstChild;
-
     counter = 0;
 
     window.addEventListener("keydown", handleKeydown);
-
     startToRestart(e);
 }
 
@@ -171,3 +182,4 @@ function cleanMainDiv() {
         mainDiv.removeChild(mainDiv.firstChild)
     }
 }
+

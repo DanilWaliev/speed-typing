@@ -139,7 +139,6 @@ body {
 
 
 #footer {
-   
     margin: 200px 0px 0px;
     padding: 20px;
     text-align: center;
@@ -150,6 +149,57 @@ body {
 .TG_link{
     color: lightgray;
 }
+
+.range_p {
+  border-radius: 10px;
+  color: lightgrey;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+.labels {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  color: lightgray;
+  margin-right: 50rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+
+#range {
+  flex-grow: 1;
+  background: #575757;
+  -webkit-appearance: none;
+  border-radius: 10px;
+  border: 2px solid black;
+  outline: none;
+  width: 200px;
+  height: 15px;
+  color: lightgray;
+}
+
+.low, .high {
+  white-space: nowrap;
+  color: lightgray;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #009999;
+  border-radius: 50%;
+  cursor: pointer;
+}
+label{
+    color: lightgray;
+    font-size: 1.5rem;
+    font-family: monospace;
+}
+
 
 /* Адаптация для мобильных */
 @media (max-width: 1024px) {

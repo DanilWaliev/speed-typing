@@ -9,6 +9,7 @@ ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header {
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
+    
 }
 
 html {
@@ -76,7 +77,10 @@ body {
     border: 2px solid #1D7373;
     text-decoration: none;
     text-align: center;
+    color: lightgray;
+    font-family: monospace;
 }
+    
 
 .login:hover {
     color: rgb(255, 255, 255);
