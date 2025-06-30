@@ -61,7 +61,6 @@ body {
 }
 
 .main {
-    border: 2px solid black;
     background-color: rgb(93, 93, 93);
     border-radius: 10px;
     width: 100%;
@@ -114,7 +113,6 @@ body {
 }
 .graph {
     background-color:  rgb(93, 93, 93);
-    border: 2px solid black;
     flex: 1;
     min-height: 400px;
     padding: 20px;
@@ -126,7 +124,6 @@ body {
 
 .sidebar {
     background-color:  rgb(93, 93, 93);
-    border: 2px solid black;
     width: 400px;
     flex: 0 0 400px;
     min-height: 400px;
