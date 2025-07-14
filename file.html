@@ -6,20 +6,34 @@
         <link rel="stylesheet" type="text/css" href="css\styles_f.css"/>
         <style>
             body{
-                background-color: rgb(255, 255, 255);
+                background-color: #2e2e2e;
                 font-family: monospace;
             }
             div{
-                color: rgb(0, 0, 0);
+                color: lightgray;
                 text-align: center;
                 font-size: 200%;
             }
             .but{
-                background-color: rgb(153, 201, 239);
-                padding: 20px;
+                width: 20%;
+                height: 50px;
+                font-size: 1.1rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0px 3px 0 0 #1D7373;
+                background-color: #009999;
+                border-radius: 10px;
+                border: 2px solid #1D7373;
+                text-decoration: none;
+                text-align: center;
+                color: lightgray;
             }
             .but:hover{
                 color: white;
+            }
+            .but:active{
+                box-shadow: none;
+                transform: translate(0, 3px);
             }
         </style>
 

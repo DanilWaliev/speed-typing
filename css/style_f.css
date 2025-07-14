@@ -1,71 +1,118 @@
-            *{
-                box-sizing: border-box;
-            }
+* {
+    box-sizing: border-box;
+}
 
-            
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, 
+ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    
+}
 
-            html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, 
-            ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
-                margin: 0;
-                padding: 0;
-                border: 0;
-                font-size: 100%;
-                vertical-align: baseline;
-            }
+html {
+    scroll-behavior: smooth;  
+}
 
-            html {
-            scroll-behavior: smooth;  
-            }
+body {
+    background-color: #2e2e2e;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
 
-            body{
-                background-color: rgb(153, 201, 239);
-                font-family: monospace;
-            }
+#main {
+    background-color: rgb(93, 93, 93);
+    width: 100%;
+    max-width: 600px;
+    padding: 50px 30px;
+    border: 2px solid black;
+    margin: 100px 0;
+    color: lightgray;
+    border-radius: 10px;
+}
 
-            #main{
-              background-color: rgb(255, 255, 255);
-              display: flex;
-              align-items: center; 
-              justify-content: center;
-              margin-top: 100px;
-              padding: 150px 50px 150px 50px;
-              margin-left: 500px;
-              margin-right: 500px;
-              border: 5px solid black;
-            }
-            .login{
-              background-color: rgb(153, 201, 239);
-              width: 400px;
-              height: 50px;
-              border: 3px solid black;
-              font-size: 18px;
+.info {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-            }
-            .login:hover{
-              color: aliceblue;
-            }
-            .email{
-              background-color: rgb(153, 201, 239);
-              padding: 10px;
-              width: 400px;
-              margin-bottom: 40px;
-              border: 3px solid black;
-            }
-            .password{
-              background-color: rgb(153, 201, 239);
-              padding: 10px;
-              width: 400px;
-              margin-bottom: 100px;
-              border: 3px solid black;
-            }
-            .info{
-              margin-top: -120px;
-              margin-bottom: 50px;
-              margin-left: 145px;
-              font-size: 250%;
-              
-            }
+.info_email, .info_password {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+}
 
-          
+.email, .password {
+    background-color:lightgray;
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    font-size: 1rem;
+    color: rgb(93, 93, 93);
+    border-radius: 10px;
+}
 
-            
+.password {
+    margin-bottom: 40px;
+}
+
+.login {
+    width: 100%;
+    height: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 0 0 #1D7373;
+    background-color: #009999;
+    border-radius: 10px;
+    border: 2px solid #1D7373;
+    text-decoration: none;
+    text-align: center;
+    color: lightgray;
+    font-family: monospace;
+}
+    
+
+.login:hover {
+    color: rgb(255, 255, 255);
+}
+.login:active{
+    box-shadow: none;
+    transform: translate(0, 3px);
+}
+
+/* Медиа-запросы для адаптации на очень маленьких экранах */
+@media (max-width: 480px) {
+    #main {
+        padding: 30px 15px;
+        margin: 50px 0;
+    }
+    
+    .info {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .email, .password {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .password {
+        margin-bottom: 30px;
+    }
+    
+    .login {
+        height: 45px;
+        font-size: 1rem;
+    }
+}
