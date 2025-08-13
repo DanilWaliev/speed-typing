@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"net/http"
 	"runtime/debug"
 )
@@ -24,6 +25,18 @@ func (app *application) notFound(w http.ResponseWriter) {
 	app.clientError(w, http.StatusNotFound)
 }
 
-func (app *application) render() {
-	// TODO реализовать рендер главной страницы
+func (app *application) render(w http.ResponseWriter) {
+	tmpl, err := template.ParseFiles("./ui/html/home.html")
+
+	if err != nil {
+		app.serverError(w, err)
+		return
+	}
+
+	err = tmpl.Execute(w, nil)
+	if err != nil {
+		app.serverError(w, err)
+		return
+	}
+
 }
