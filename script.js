@@ -178,7 +178,6 @@ function handleKeydown(e) {
 
         if (textNode === null){
              endInput();
-             resultArray.push(result);
         }
     }
 }
