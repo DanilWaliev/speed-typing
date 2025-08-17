@@ -25,6 +25,8 @@ func (app *application) notFound(w http.ResponseWriter) {
 	app.clientError(w, http.StatusNotFound)
 }
 
+// TODO Дать в рот муртузу
+
 func (app *application) render(w http.ResponseWriter) {
 	tmpl, err := template.ParseFiles("./ui/html/home.html")
 
