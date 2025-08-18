@@ -14,9 +14,10 @@ namespace TextHandle
         // инициализация модели клавиатуры
         static char[,] keyboardModel = new char[,]
         {
-                {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'},
-                {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'},
-                {'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/'}
+                {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-'},
+                {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '['},
+                {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\''},
+                {'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', '\\'}
         };
 
         // словарь для отображения координат каждого символа на модели клавиатуры
@@ -62,7 +63,7 @@ namespace TextHandle
                     {
                         sum += scoreForUpperChar;
                     }
-                }
+                } 
                 word = word.ToLower();
                 
 
@@ -88,6 +89,10 @@ namespace TextHandle
         // map всегда упорядоченна по алфавиту
         private List<WordDifficulty> map;
 
+        private double maxDifficulty;
+        private double minDifficulty;
+        private double avgDifficulty;
+
         public WordDifficultyMap()
         {
             map = new List<WordDifficulty>();
@@ -104,7 +109,7 @@ namespace TextHandle
         }
         public void Add(string word)
         {
-            WordDifficulty wordDifficulty = new WordDifficulty(word);
+            WordDifficulty wordDifficulty = new  WordDifficulty(word);
             int foundIndex = map.BinarySearch(wordDifficulty, new WordDifficultyComparer());
 
             if (foundIndex < 0) map.Insert(~foundIndex, wordDifficulty);      
@@ -117,22 +122,65 @@ namespace TextHandle
             if (foundIndex < 0) map.Insert(~foundIndex, wordDifficulty);
         }
 
-        public void Print()
-        {
+        public void Print(int numberOfChunk)
+        { 
             int count = map.Count;
-            if (count > 0)
-            {
-                Console.WriteLine("count of words: " + map.Count);
-            }
-            else
+            int wordsPerChunk = 10;
+            if (count == 0)
             {
                 Console.WriteLine("no words");
             }
 
-            for (int i = 0; i < map.Count; i++)
+            int start = (numberOfChunk - 1) * wordsPerChunk;
+            int end = ((numberOfChunk - 1) * wordsPerChunk) + wordsPerChunk;
+
+            for (int i = start; i < end; i++)
             {
                 Console.WriteLine(map[i].Word + " - " + map[i].Difficulty);
             }
+            Console.WriteLine("[" + start +  "-" + end + "]");
+        }
+
+        public void PrintStats()
+        {
+            double max = 0;
+            double min = 100;
+            double sum = 0;
+            double avg = 0;
+            double step = 0.2;
+
+            for (int i = 0; i < map.Count(); i++)
+            {
+                sum += map[i].Difficulty;
+                if (max < map[i].Difficulty) max = map[i].Difficulty;
+                if (min > map[i].Difficulty) min = map[i].Difficulty;
+            }
+
+            avg = sum / map.Count;
+
+            min = Math.Round(min, 3);
+            max = Math.Round(max, 3);
+            avg = Math.Round(avg, 3);
+
+            Console.WriteLine("count: " + map.Count());
+            Console.WriteLine("min difficulty: " + min);
+            Console.WriteLine("max difficulty: " + max);
+            Console.WriteLine("avg difficulty: " + avg);
+
+            int countOfIntervals = (int)((max - min) / step) + 1;
+            for (int i = 0; i < countOfIntervals; i++)
+            {
+                int count = 0;
+                double startOfInterval = Math.Round(min + (i * step), 3);
+                double endOfInterval = Math.Round(min + ((i + 1) * step), 3);
+                for (int j = 0; j < map.Count; j++)
+                {
+                    if (map[j].Difficulty >= startOfInterval && map[j].Difficulty <= endOfInterval) count++;
+                }
+
+                Console.WriteLine(startOfInterval + "-" + endOfInterval + ": " + count);
+            }
+
         }
     }
 

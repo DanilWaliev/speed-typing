@@ -23,25 +23,18 @@ let resultArray = [];
 // кол-во попыток(зависимость графика по абициссе)
 let countArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 // Текст для печати
-let textLow = 'the sun shines bright in the clear blue sky birds fly high above the green trees';
-let textMedium = 'typing quickly and accurately is a skill that takes time to develop regular practice helps build muscle memory and improves your speed and stay focused and keep your hands steady';
-let textHigh = 'to become a fast typist you must train your fingers to move without thinking and start with simple exercises and gradually move to complex texts avoid looking at the keyboard and trust your muscle memory speed will come naturally with patience and persistence remember even experts were once beginners who never gave up';
 let text;
 // Ползунок
 const rangeSlider = document.getElementById('range');
 
-
+// получение текста с сервера
+async function getWords(event) {
+    let response = await fetch("/words?difficulty=" + rangeSlider.value)
+    text = await response.text()
+}
 
 // Обработка нажатия кнопки Start
 function startInput(event) {
-    const rangePosition = rangeSlider.value
-    if (rangePosition == 1)
-        text = textLow;
-    else if (rangePosition == 2)
-        text = textMedium;
-    else if (rangePosition == 3)
-        text = textHigh;
-
     mainDiv.innerHTML = '';
 
     for (const char of text) {

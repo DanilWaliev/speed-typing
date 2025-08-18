@@ -39,6 +39,11 @@ namespace TextHandle
                 return false;
             }
 
+            foreach (char c in word)
+            {
+                if (!Char.IsAsciiLetter(c)) return false;
+            }
+
             return true;
         }
     }

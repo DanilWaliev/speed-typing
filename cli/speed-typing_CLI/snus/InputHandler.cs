@@ -9,12 +9,13 @@ namespace UI
     public enum Command
     {
         Exit,
-        Watch,
+        Words,
         Tables,
         Help,
         Delete,
         Drop,
-        Scan
+        Read,
+        Stat
     }
 
     internal static class InputHandler
@@ -54,17 +55,20 @@ namespace UI
 
                 switch (splittedCommand[0].ToLower())
                 {
-                    case "scan":
-                        if (commandArgs.Length > 1) return Command.Scan;
+                    case "read":
+                        if (commandArgs.Length > 1) return Command.Read;
                         break;
-                    case "watch":
-                        if (commandArgs.Length > 0) return Command.Watch;
+                    case "words":
+                        if (commandArgs.Length > 1 && Int32.Parse(commandArgs[1]) > 0 && Int32.TryParse(commandArgs[1], out int _)) return Command.Words;
                         break;
                     case "delete":
                         if (commandArgs.Length > 1) return Command.Delete;
                         break;
                     case "drop":
                         if (commandArgs.Length > 0) return Command.Drop;
+                        break;
+                    case "stat":
+                        if (commandArgs.Length > 0) return Command.Stat;
                         break;
                     case "tables":
                         return Command.Tables;
@@ -82,10 +86,11 @@ namespace UI
         {
             string helpText = """
                 tables - to watch list of tables
-                watch <table name> - to watch words of specific table
-                scan <file path> <table name> - to enter data from text file to specific table (will be created if not exists)
+                words <table name> <number of chunk> - to watch words of specific table in specific chunk
+                read <file path> <table name> - to enter data from text file to specific table (will be created if not exists)
                 drop <table name> - to delete specific table
                 delete <table name> <word1 word2 word3 ...> - to delete words in specific table
+                stat <table name> - to watch statistic about specific table
                 """;
             Console.WriteLine(helpText);
         }

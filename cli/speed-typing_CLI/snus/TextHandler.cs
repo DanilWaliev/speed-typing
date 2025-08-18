@@ -32,7 +32,7 @@ namespace TextHandle
                     splitted[i] = splitted[i].Trim(vwc.CharsToRemove);
                     if (vwc.IsWordValid(splitted[i]))
                     {
-                        wdm.Add(splitted[i]);
+                        wdm.Add(splitted[i].ToLower());
                     }
                 }
             }

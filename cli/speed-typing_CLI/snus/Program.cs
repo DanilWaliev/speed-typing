@@ -29,16 +29,20 @@ namespace App
                 {
                     case UI.Command.Exit:
                         return;
-                    case UI.Command.Scan:
+                    case UI.Command.Read:
                         TextHandler.ReadWords(commandArgs[0], vwc, ref wdm);
                         ws.InsertWords(wdm, commandArgs[1]);
                         break;
-                    case UI.Command.Watch:
+                    case UI.Command.Words:
                         wdm = ws.GetWords(commandArgs[0]);
-                        wdm.Print();
+                        wdm.Print(Int32.Parse(commandArgs[1]));
                         break;
                     case UI.Command.Tables:
                         UI.InputHandler.ShowTables(ws.GetTableNames());
+                        break;
+                    case UI.Command.Stat:
+                        wdm = ws.GetWords(commandArgs[0]);
+                        wdm.PrintStats();
                         break;
                     case UI.Command.Help:
                         UI.InputHandler.ShowHelpInfo();
